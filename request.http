@@ -1,0 +1,76 @@
+@url = http://localhost:8000
+
+### GET posta guztiak
+GET {{url}}/api/posts
+
+### POST posta create post bat
+POST {{url}}/api/posts
+##poner el token siempre q se haga login
+Authorization: Bearer 4|oEObhqGg0ievpHddmQmPkn6ukb0bwY4gIjNaF66418fcf0bd
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title" : "Titulua 1",
+    "body" : "Edukia 1"
+}
+
+### GET posta id=1 duena
+GET {{url}}/api/posts/2
+
+### PUT posta eguneratu
+PUT {{url}}/api/posts/2
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title" : "Titulua 2 eguneratua",
+    "body" : "Edukia 2 eguneratua"
+}
+
+### DELETE posta bat
+DELETE {{url}}/api/posts/1
+
+
+### POST user register
+POST {{url}}/api/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name" : "Koxme",
+    "email" : "koxme@koxme.koxme",
+    "password" : "pasahitza",
+    "password_confirmation" : "pasahitza"
+}
+
+
+### POST user login
+# @name login
+POST {{url}}/api/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email" : "koxme@koxme.koxme",
+    "password" : "pasahitza"
+}
+
+### POST user logout
+POST {{url}}/api/logout
+//aqui meter el token del logout
+//Authorization:{{token}}
+Authorization: Bearer 6|ZUgwz97DVj0lddytXsD6fFZsfcz2hOimrXM12o7B9fb13e7e
+#Accept: application/json
+
+### POST posta create post bat
+POST {{url}}/api/posts
+//Authorization:{{token}}
+Authorization: Bearer 1|GaHirIXWBT2Z1udtfBXIX93MT4XCRBcarJv51nW868fc5f89
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title" : "Titulua 2",
+    "body" : "Edukia 2"
+}
